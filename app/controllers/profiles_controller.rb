@@ -12,10 +12,10 @@ class ProfilesController < ApplicationController
 		@profile = @user.build_profile(profile_params)
 
 		if @profile.save
-			flash[:success], 'Your profile updated.'
+			flash[:success] = "Profile updated."
 			redirect_to user_path( params[:user_id] )
 		else
-			flash[:danger], 'Error occured. Profile not created.'
+			flash[:danger] = "Error occured. Profile not created."
 			render action: :new
 		end
 		
