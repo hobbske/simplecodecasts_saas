@@ -6,13 +6,14 @@
 <div class="row">
 	<% if user_signed_in? %>
 		<div class="col-md-6">
-			<div class="well">
-				<h2 class="text-center"> Your Profile </h2>
-				<% if current_user.profile %>
+			<div class="well text-center">
+				<h2> Your Profile </h2>
+				<% if user_signed_in? %>
 					<%= link_to "Edit Profile", "#{}", class: 'btn btn-lg btn-block btn-warning' %>
 					<%= link_to "View Profile", user_path(:user_id), class: 'btn btn-lg btn-block btn-success' %>
 
 				<% else %>
+					<p>Create your profile so that you can share your information with the community.</p>
 					<%= link_to "Create Profile", new_user_profile_path(current_user), class: 'btn btn-lg btn-block btn-warning'  if  current_user %>
 				<% end %>
 			</div>
@@ -20,7 +21,7 @@
 		<div class="col-md-6">
 			<div class="well text-center">
 				<h2> The Community </h2>
-				<p>Visit the community to meet other developers, entreprenuers, and investors!</p>
+				<p>Visit the community to meet other developers, entrepreneurs, and investors!</p>
 				<%= link_to 'Visit the Community', "#", class: 'btn btn-lg btn-block btn-default' %>
 			</div>
 		</div>
