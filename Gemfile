@@ -29,6 +29,8 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'stripe', '~> 3.2'
 # Use figaro to hide secret key
 gem 'figaro', '~> 1.1', '>= 1.1.1'
+# Use paperclip for image uploads
+gem 'paperclip', '~> 4.2', '>= 4.2.1'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
