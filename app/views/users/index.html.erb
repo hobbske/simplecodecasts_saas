@@ -1,1 +1,58 @@
-<h1>Community Page</h1>
+<div class="row table-responsive">
+	<div class="col-xs-12 text-center">
+		<div class="well">
+			<h1>Dev Match Community</h1>
+		</div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Photo</th>
+					<th>Type</th>
+					<th>Name</th>
+					<% if current_user.plan_id == 2 %>
+						<th>Email</th>
+						<th>Phone</th>
+					<% end %>
+				</tr>
+			</thead>
+
+			<tbody>
+				<% @users.each do |user| %>
+					<% if user.profile %>
+						
+							<tr class="<%= cycle('white-bg', 'blue-bg')%>">	
+								
+									<td>
+										<%= link_to user do %>
+											<%= image_tag user.profile.avatar.url(:thumb), class: 'profile-image img-responsive' %>
+										<% end %>												
+									</td>
+											
+									<td>
+										<%= link_to user do %>
+											<%= user.profile.job_title %>
+										<% end %>		
+									</td>
+									
+									<td>
+										<%= link_to user do %>
+											<%= user.profile.first_name %> <%= user.profile.last_name %>
+										<% end %>	
+									</td>
+
+									<% if current_user.plan_id == 2 %>
+										<td><%= user.profile.contact_email %></td>
+										<td><%= user.profile.phone_number %></td>
+									<% end %>
+												
+							</tr>
+						
+					<% end %>
+				<% end %>
+			</tbody>
+
+		</table>
+	</div>
+</div>
+
+
