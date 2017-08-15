@@ -14,13 +14,15 @@
 			<%= @user.profile.description %>
 		</div>
 
-		<div class="well contact-info">
-			<h3>Contact Info</h3>
-			<% if true#current_user.plan_id == 2 %>
-				Ph: <%= @user.profile.phone_number %> <br/>
-				Email: <%= @user.profile.contact_email %> <br/>
-			<% end %>
-		</div>
+		<% if current_user.plan_id == 2 %>
+			<div class="well contact-info">
+				<h3>Contact Info</h3>
+				
+					Ph: <%= @user.profile.phone_number %> <br/>
+					Email: <%= @user.profile.contact_email %> <br/>
+				
+			</div>
+		<% end %>
 
 	</div>
 
