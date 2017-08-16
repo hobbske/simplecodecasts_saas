@@ -1,11 +1,12 @@
 <div class="row table-responsive">
 	<div class="col-xs-12 text-center">
-		<div class="well">
+		<div>
 			<h1>Dev Match Community</h1>
 		</div>
-		<table class="table">
+		<table class="table table-condensed margin-auto">
 			<thead>
 				<tr>
+					<th></th>
 					<th>Photo</th>
 					<th>Type</th>
 					<th>Name</th>
@@ -21,7 +22,14 @@
 					<% if user.profile %>
 						
 							<tr class="<%= cycle('white-bg', 'blue-bg')%>">	
-								
+									
+									<td>
+										<%= link_to user do %>
+											<% if user.plan_id == 2 %>
+												<span class="label label-danger">PRO</span>
+											<% end %>
+										<% end %>
+									</td>
 									<td>
 										<%= link_to user do %>
 											<%= image_tag user.profile.avatar.url(:thumb), class: 'profile-image img-responsive' %>

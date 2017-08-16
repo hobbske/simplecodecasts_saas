@@ -22,4 +22,5 @@ class Users::RegistrationsController < Devise::RegistrationsController
         redirect_to root_url
       end
     end
+
 end
