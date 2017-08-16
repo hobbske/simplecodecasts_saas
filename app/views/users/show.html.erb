@@ -14,7 +14,7 @@
 			<%= @user.profile.description %>
 		</div>
 
-		<% if current_user.plan_id == '2' %>
+		<% if current_user.plan_id == 2 %>
 			<div class="well contact-info">
 				<h3>Contact Info</h3>
 				
@@ -38,10 +38,11 @@
 				<% end %>
 			</div>
 		<% end %>
+
 		
 		<br>
 		<div class="text-center">
-			<%= link_to :back, class: 'btn btn block btn-default' do %>
+			<%= link_to users_path, class: 'btn btn block btn-default' do %>
 				<i class="fa fa-hand-o-left" aria-hidden="true"></i>
 				Back to Community
 			<% end %>
