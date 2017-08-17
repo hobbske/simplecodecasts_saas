@@ -41,7 +41,7 @@
           <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn btn-danger navbar-btn' %>
 
           <% if current_user.plan_id == 1 %>
-            <%= link_to "Go Pro", edit_user_registration_path, class: 'btn btn-success navbar-btn' %>
+            <%= link_to "Go Pro", edit_user_registration_path(upgrade: 'Pro'), class: 'btn btn-success navbar-btn' %>
           <% end %>
 
         <% else %>
@@ -50,6 +50,7 @@
       </div>
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
+          <li><%= link_to "My Account", edit_user_registration_path %></li>
           <li><%= link_to "Profile", user_path(current_user) %></li>
         <% end %>
         <li><%= link_to "Community", users_path %></li>
