@@ -1,11 +1,19 @@
 <div class="row well">
-	<div class="col-md-4 well">
+	<div class="col-md-4 well text-center">
 		<%= image_tag @user.profile.avatar.url(:medium), class: 'profile-image img-circle img-responsive' %>
+
+		<br>
+
+		<% if @user.plan_id == 2 %>
+			<span class="label label-danger">PRO</span>
+		<% else %>
+			<span class="label label-default">BASIC</span>
+		<% end %>
 	</div>
 
 	<div class="col-md-8">
 		<div class="text-center">
-			<h1><%= @user.profile.first_name %> <%= @user.profile.last_name %> </h1>
+			<h1><%= @user.profile.first_name %> <%= @user.profile.last_name %></h1>
 			<h3><span class="job-title-icon"><%= job_title_icon %></span><%= @user.profile.job_title %> </h3>
 		</div>
 		
@@ -42,9 +50,9 @@
 		
 		<br>
 		<div class="text-center">
-			<%= link_to users_path, class: 'btn btn block btn-default' do %>
+			<%= link_to :back, class: 'btn btn block btn-default' do %>
 				<i class="fa fa-hand-o-left" aria-hidden="true"></i>
-				Back to Community
+				Back
 			<% end %>
 		</div>
 	</div>
